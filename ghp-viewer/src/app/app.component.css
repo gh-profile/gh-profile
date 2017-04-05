@@ -8,6 +8,10 @@ app {
   flex-direction: column;
 }
 
+main {
+  flex: 1;
+}
+
 app-navbar {
   position: relative;
   z-index: 10;

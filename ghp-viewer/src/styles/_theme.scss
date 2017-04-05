@@ -8,6 +8,8 @@ $accent: mat-palette($mat-amber, A200, A100, A400);
 $theme: mat-light-theme($primary, $accent);
 
 @import '../app/shared/navbar/navbar-theme';
+@import '../app/shared/footer/footer-theme';
 
 @include navbar-theme($theme);
+@include footer-theme($theme);
 
