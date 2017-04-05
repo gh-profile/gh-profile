@@ -12,3 +12,5 @@ $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 @include navbar-theme($dark-theme);
 @include footer-theme($dark-theme);
 
+@import './typography-theme';
+@include typography-theme($dark-theme);
