@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic');
+
+h1, h2, h3, h4, h5, h6, h7 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1, h2 {
+  font-weight: 400;
+}
+
+pre {
+  // Pre elements won't wrap text by default and can exceed the boundaries of their parent element.
+  // This adds extra scroll space when visiting the docs mobile. Pre-wrapping the code examples
+  // will ensure that the code never exceeds the page width.
+  white-space: pre-wrap;
+}
+
+code {
+  font-size: 90%;
+}
+
+* {
+  font-family: 'Roboto', sans-serif;
+}

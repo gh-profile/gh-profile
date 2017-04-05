@@ -1,3 +1,5 @@
+import 'hammerjs' // @angular/material
+
 import { BrowserModule } from '@angular/platform-browser'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
@@ -14,6 +16,7 @@ import {
   RouterModule,
   PreloadAllModules
 } from '@angular/router'
+import { MaterialModule } from '@angular/material'
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -29,8 +32,9 @@ import { AboutComponent } from './about'
 import { NoContentComponent } from './no-content'
 import { XLargeDirective } from './home/x-large'
 
+import { SharedModule, } from './shared/shared.module'
+
 import '../styles/styles.scss'
-import '../styles/headings.css'
 
 // Application wide providers
 const APP_PROVIDERS = [
@@ -56,7 +60,9 @@ type StoreType = {
     NoContentComponent,
     XLargeDirective
   ],
-  imports: [ // import Angular's modules
+  imports: [
+    SharedModule,
+    MaterialModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpModule,
@@ -68,7 +74,6 @@ type StoreType = {
   ]
 })
 export class AppModule {
-
   constructor(
     public appRef: ApplicationRef,
     public appState: AppState

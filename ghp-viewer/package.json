@@ -2,7 +2,11 @@
   "name": "gh-profile",
   "version": "0.0.1",
   "description": "gh-profile",
-  "keywords": [ "github", "profile", "gh-profile" ],
+  "keywords": [
+    "github",
+    "profile",
+    "gh-profile"
+  ],
   "author": "1ambda",
   "homepage": "https://github.com/1ambda/gh-profile",
   "license": "MIT",
@@ -69,6 +73,7 @@
     "@angular/core": "^4.0.1",
     "@angular/forms": "^4.0.1",
     "@angular/http": "^4.0.1",
+    "@angular/material": "^2.0.0-beta.2",
     "@angular/platform-browser": "^4.0.1",
     "@angular/platform-browser-dynamic": "^4.0.1",
     "@angular/platform-server": "^4.0.1",
@@ -77,6 +82,7 @@
     "@angularclass/hmr": "~1.2.2",
     "@angularclass/hmr-loader": "~3.0.2",
     "core-js": "^2.4.1",
+    "hammerjs": "^2.0.8",
     "http-server": "^0.9.0",
     "ie-shim": "^0.1.0",
     "jasmine-core": "^2.5.2",
@@ -86,7 +92,7 @@
   },
   "devDependencies": {
     "@angular/compiler-cli": "^4.0.1",
-    "@types/hammerjs": "^2.0.33",
+    "@types/hammerjs": "^2.0.34",
     "@types/jasmine": "^2.5.47",
     "@types/node": "^7.0.0",
     "@types/selenium-webdriver": "~2.53.39",
