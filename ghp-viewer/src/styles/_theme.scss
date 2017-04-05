@@ -3,13 +3,12 @@
 
 @include mat-core();
 
-$primary: mat-palette($mat-cyan);
-$accent: mat-palette($mat-amber, A200, A100, A400);
-$theme: mat-light-theme($primary, $accent);
-
+$dark-primary: mat-palette($mat-blue-grey);
+$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
+$dark-warn:    mat-palette($mat-deep-orange);
+$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
 @import '../app/shared/navbar/navbar-theme';
 @import '../app/shared/footer/footer-theme';
-
-@include navbar-theme($theme);
-@include footer-theme($theme);
+@include navbar-theme($dark-theme);
+@include footer-theme($dark-theme);
 
