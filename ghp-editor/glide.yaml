@@ -1,0 +1,14 @@
+package: github.com/1ambda/gh-profile/ghp-editor
+ignore:
+- github.com/1ambda/gh-profile
+import:
+- package: github.com/spf13/viper
+- package: github.com/Sirupsen/logrus
+- package: github.com/pkg/errors
+- package: gopkg.in/kataras/iris.v6
+- package: github.com/alexflint/go-arg
+testImport:
+- package: github.com/onsi/ginkgo
+  version: ~1.2.0
+- package: github.com/onsi/gomega
+  version: ~1.0.0

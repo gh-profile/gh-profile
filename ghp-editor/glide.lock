@@ -1,0 +1,24 @@
+hash: ee76a9084e72a70a7161fe3f6de929f8a2d068485b420430fad05aa11fb10434
+updated: 2017-04-05T22:30:25.66771423+09:00
+imports:
+- name: github.com/alexflint/go-arg
+  version: cef6506c97e5731da728c374ff3523e481026423
+- name: github.com/alexflint/go-scalar
+  version: 45e5d6cd8605faef82fda2bacc59e734a0b6f1f0
+- name: github.com/pkg/errors
+  version: ff09b135c25aae272398c51a07235b90a75aa4f0
+- name: github.com/Sirupsen/logrus
+  version: 10f801ebc38b33738c9d17d50860f484a0988ff5
+- name: github.com/spf13/viper
+  version: 84f94806c67f59dd7ae87bc5351f7a9c94a4558d
+- name: golang.org/x/sys
+  version: 493114f68206f85e7e333beccfabc11e98cba8dd
+  subpackages:
+  - unix
+- name: gopkg.in/kataras/iris.v6
+  version: 1abc3410a8db56ce7299bb11288659189a747041
+testImports:
+- name: github.com/onsi/ginkgo
+  version: 462326b1628e124b23f42e87a8f2750e3c4e2d24
+- name: github.com/onsi/gomega
+  version: a78ae492d53aad5a7a232d0d0462c14c400e3ee7
