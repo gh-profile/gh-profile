@@ -38,7 +38,7 @@ GOTEST	= ginkgo
 GOTEST_OPT	= -r -p -v -cover
 
 # build flags
-IMPORTPATH	= "github.com/1ambda/gh-profile/ghp-editor"
+IMPORTPATH	= "github.com/gh-profile/gh-profile/ghp-editor"
 VERSION     = "0.0.1"
 GIT_COMMIT  =$(shell git rev-parse HEAD)
 GIT_DIRTY   =$(shell test -n "`git status --porcelain`" && echo "+CHANGES" || true)
