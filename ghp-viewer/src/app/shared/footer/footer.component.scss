@@ -1,41 +1,43 @@
 .app-footer {
-}
+  padding-top: 15px;
+  padding-bottom: 15px;
 
-.footer-list {
-  align-items: center;
   display: flex;
-  flex-flow: row wrap;
-  padding: 2px;
+  justify-content: center;
 }
 
-.footer-angular-logo {
-  height: 50px;
-}
-
-.footer-copyright {
+.footer-container {
   display: flex;
-  flex: 1;
-  justify-content: flex-end;
-}
+  flex-direction: column;
 
-.footer-links ul {
-  list-style: none;
-  margin: 0 40px;
-  padding: 0;
+  .footer-strong-text {
+    font-weight: bold;
+    font-style: italic;
+  }
 
-  a {
-    font-size: 16px;
-    padding: 0;
-    text-decoration: none;
+  .footer-copyright {
+    display: flex;
+    flex-direction: row;
+    font-weight: 300;
 
-    &:hover {
+    a {
       text-decoration: underline;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .footer-copyright-text {
+    }
+
+    .footer-link-text {
+      margin-left: auto;
     }
   }
 }
 
-@media screen and (max-width: 884px){
-  .footer-list {
-    flex-direction: column;
+@media only screen and (min-width: 551px) {
+  .footer-container {
+    width: 85%;
   }
 }

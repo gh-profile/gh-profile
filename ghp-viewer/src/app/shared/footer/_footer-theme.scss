@@ -6,7 +6,7 @@
   $foreground: map-get($theme, foreground);
 
   app-footer {
-    .footer-links a {
+    .footer-copyright a {
       color: mat-color($primary, default-contrast);
     }
 
