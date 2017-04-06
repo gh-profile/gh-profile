@@ -21,18 +21,18 @@ $ cd $GOPATH/src/github.com/gh-profile/gh-profile
 
 ### ghp-viewer (Front)
 
-```view
-# editor
-cd ghp-editor
-make install       # only once
-make run-cont      # localhost:10001
-```
-
-### ghp-editor (Server)
-
 ```sh
 # viewer
 cd ghp-viewer
 yarn install        # only once
-yarn run start:hmr  # localhost:10002
+yarn run start:hmr  # localhost:10001
+```
+
+### ghp-editor (Server)
+
+```view
+# editor
+cd ghp-editor
+make install       # only once
+make run-cont      # localhost:10002
 ```
