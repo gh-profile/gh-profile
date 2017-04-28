@@ -1,6 +1,7 @@
 import 'hammerjs' // @angular/material
 
 import { BrowserModule } from '@angular/platform-browser'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule } from '@angular/forms'
 import { HttpModule } from '@angular/http'
 import {
@@ -17,6 +18,7 @@ import {
   PreloadAllModules
 } from '@angular/router'
 import { MaterialModule } from '@angular/material'
+import { FlexLayoutModule } from '@angular/flex-layout'
 
 /*
  * Platform and Environment providers/directives/pipes
@@ -28,9 +30,11 @@ import { AppComponent } from './app.component'
 import { APP_RESOLVER_PROVIDERS } from './app.resolver'
 import { AppState, InternalStateType } from './app.service'
 import { HomeComponent } from './home'
+import { LanguageTabComponent } from './home/tabs/language-tab.component'
+import { RepositoryTabComponent } from './home/tabs/repository-tab.component'
+import { ContributionTabComponent } from './home/tabs/contribution-tab.component'
 import { AboutComponent } from './about'
 import { NoContentComponent } from './no-content'
-import { XLargeDirective } from './home/x-large'
 
 import { SharedModule, } from './shared/shared.module'
 
@@ -57,13 +61,15 @@ type StoreType = {
     AppComponent,
     AboutComponent,
     HomeComponent,
+    LanguageTabComponent, RepositoryTabComponent, ContributionTabComponent,
     NoContentComponent,
-    XLargeDirective
   ],
   imports: [
     SharedModule,
     MaterialModule.forRoot(),
+    FlexLayoutModule,
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
