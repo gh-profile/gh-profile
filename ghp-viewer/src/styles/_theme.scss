@@ -1,18 +1,24 @@
-@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import '~@angular/material/theming';
 
 @include mat-core();
 
-$dark-primary: mat-palette($mat-blue-grey);
-$dark-accent: mat-palette($mat-amber, A200, A100, A400);
-$dark-warn: mat-palette($mat-deep-orange);
-$dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
-@import '../app/shared/navbar/navbar.theme';
+$primary: mat-palette($mat-blue-grey);
+$accent: mat-palette($mat-amber, A200, A100, A400);
+$warn: mat-palette($mat-deep-orange);
+
+$light-theme : mat-light-theme($primary, $accent, $warn);
+$dark-theme: mat-dark-theme($primary, $accent, $warn);
+$dark-theme: map-merge($dark-theme, (backgroundSub: #F5F5F5));
+
+@include angular-material-theme($dark-theme);
+
 @import '../app/shared/footer/footer.theme';
+@import '../app/shared/navbar/navbar.theme';
 @import '../app/home/home.theme';
 
 @include navbar-theme($dark-theme);
 @include footer-theme($dark-theme);
+@include home-theme($dark-theme);
 
 @import './typography-theme';
 @include typography-theme($dark-theme);

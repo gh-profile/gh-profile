@@ -21,10 +21,9 @@
     font-weight: 300;
 
     a {
-      text-decoration: underline;
-      &:hover {
-        text-decoration: underline;
-      }
+      font-weight: 300;
+      text-decoration: none;
+      &:hover { text-decoration: underline; }
     }
 
     .footer-copyright-text {
