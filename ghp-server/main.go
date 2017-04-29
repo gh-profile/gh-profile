@@ -2,7 +2,7 @@ package main
 
 import (
     "fmt"
-    "github.com/gh-profile/gh-profile/ghp-editor/config"
+    "github.com/gh-profile/gh-profile/ghp-server/config"
     "gopkg.in/kataras/iris.v6"
     "gopkg.in/kataras/iris.v6/adaptors/httprouter"
 )

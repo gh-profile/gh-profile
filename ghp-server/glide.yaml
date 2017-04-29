@@ -1,4 +1,4 @@
-package: github.com/1ambda/gh-profile/ghp-editor
+package: github.com/1ambda/gh-profile/ghp-server
 ignore:
 - github.com/1ambda/gh-profile
 import:

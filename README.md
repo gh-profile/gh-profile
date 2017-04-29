@@ -19,20 +19,18 @@ $ go get -d github.com/gh-profile/gh-profile
 $ cd $GOPATH/src/github.com/gh-profile/gh-profile
 ```
 
-### ghp-viewer (Front)
+### ghp-webapp
 
 ```sh
-# viewer
-cd ghp-viewer
+cd ghp-webapp
 yarn install        # only once
 yarn run start:hmr  # localhost:10001
 ```
 
-### ghp-editor (Server)
+### ghp-server
 
-```view
-# editor
-cd ghp-editor
+```sh
+cd ghp-server
 make install       # only once
 make run-cont      # localhost:10002
 ```
