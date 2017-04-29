@@ -1,7 +1,12 @@
 .tab-title {
-  font-weight: 100;
+  font-weight: 200;
 }
 
 .tab-content-container {
   margin-top: 15px;
+  margin-bottom: 50px;
+}
+
+.skill-title {
+  margin-top: 50px;
 }

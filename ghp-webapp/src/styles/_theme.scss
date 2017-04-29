@@ -11,6 +11,7 @@ $dark-theme: mat-dark-theme($primary, $accent, $warn);
 $dark-theme: map-merge($dark-theme, (backgroundSub: #F5F5F5));
 
 @include angular-material-theme($dark-theme);
+@include mat-chips-theme($light-theme);
 
 @import '../app/shared/footer/footer.theme';
 @import '../app/shared/navbar/navbar.theme';

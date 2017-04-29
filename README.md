@@ -23,8 +23,8 @@ $ cd $GOPATH/src/github.com/gh-profile/gh-profile
 
 ```sh
 cd ghp-webapp
-yarn install        # only once
-yarn run start:hmr  # localhost:10001
+yarn install            # only once
+yarn run start:dev:hmr  # localhost:10001
 ```
 
 ### ghp-server

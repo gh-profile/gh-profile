@@ -1,11 +1,19 @@
 <div class="tab-content-container">
   <div fxFlex.gt-sm="20%" fxFlex.lt-md="10%" fxFlex.lt-sm="5%"></div> <!-- empty column -->
   <div fxFlex.gt-sm="60%" fxFlex.lt-md="80%" fxFlex.lt-sm="90%">
-    <h2 class="tab-title">Languages</h2>
+    <h3 class="tab-title">Languages</h3>
     <lang-progress *ngFor="let langInfo of langInfos"
                    name="{{langInfo.name}}"
                    color="{{langInfo.color}}"
                    percent="{{langInfo.percent}}"></lang-progress>
+
+    <h3 class="tab-title skill-title">Skills</h3>
+    <md-chip-list>
+      <md-chip *ngFor="let skillInfo of skillInfos"
+               [style.margin]="'5px 5px'">
+        {{skillInfo.name}}
+      </md-chip>
+    </md-chip-list>
   </div>
   <div fxFlex.gt-sm="20%" fxFlex.lt-md="10%" fxFlex.lt-sm="5%"></div> <!-- empty column -->
 </div>

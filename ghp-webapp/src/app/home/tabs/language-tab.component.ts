@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 import { LangInfo } from '../lang/lang-info'
+import { SkillInfo } from '../skill/skill-info'
 
 @Component({
   selector: 'language-tab',
@@ -9,8 +10,8 @@ import { LangInfo } from '../lang/lang-info'
   templateUrl: './language-tab.component.html'
 })
 export class LanguageTabComponent implements OnInit {
-
   public langInfos: LangInfo[]
+  public skillInfos: SkillInfo[]
 
   public ngOnInit() {
     this.langInfos = [
@@ -19,6 +20,20 @@ export class LanguageTabComponent implements OnInit {
       new LangInfo('Java', '#8CCCBE', 80),
       new LangInfo('Typescript', '#ADD8C7', 70),
       new LangInfo('Golang', '#E0A3FF', 60),
+    ]
+
+    this.skillInfos = [
+      new SkillInfo("react"),
+      new SkillInfo("redux-saga"),
+      new SkillInfo("angular2"),
+      new SkillInfo("angular1"),
+      new SkillInfo("akka"),
+      new SkillInfo("scalaz"),
+      new SkillInfo("Finch"),
+      new SkillInfo("gokit"),
+      new SkillInfo("docker"),
+      new SkillInfo("jenkins"),
+      new SkillInfo("travis"),
     ]
   }
 }
