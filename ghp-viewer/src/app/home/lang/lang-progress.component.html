@@ -1,8 +1,9 @@
-<div class="lang-container">
-  <div class="lang-label">{{name}}</div>
+<div class="lang-progress-container">
   <div class="progress">
     <div class="bar animated"
-         [style.width]="percent+'%'"
-         [style.backgroundColor]="color"></div>
+         [style.width]="percent + '%'"
+         [style.backgroundColor]="color">
+      {{name}}
+    </div>
   </div>
 </div>

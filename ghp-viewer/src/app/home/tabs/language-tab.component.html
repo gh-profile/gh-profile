@@ -1,3 +1,11 @@
-<div>
-  lang + skill content
+<div class="tab-content-container">
+  <div fxFlex.gt-sm="20%" fxFlex.lt-md="5%"></div> <!-- empty column -->
+  <div fxFlex.gt-sm="60%" fxFlex.lt-md="90%">
+    <h2 class="tab-title">Languages</h2>
+    <lang-progress *ngFor="let langInfo of langInfos"
+                   name="{{langInfo.name}}"
+                   color="{{langInfo.color}}"
+                   percent="{{langInfo.percent}}"></lang-progress>
+  </div>
+  <div fxFlex.gt-sm="20%" fxFlex.lt-md="5%"></div> <!-- empty column -->
 </div>

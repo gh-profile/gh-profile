@@ -31,6 +31,7 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver'
 import { AppState, InternalStateType } from './app.service'
 import { HomeComponent } from './home'
 import { LanguageTabComponent } from './home/tabs/language-tab.component'
+import { LangProgressComponent } from './home/lang/lang-progress.component'
 import { RepositoryTabComponent } from './home/tabs/repository-tab.component'
 import { ContributionTabComponent } from './home/tabs/contribution-tab.component'
 import { AboutComponent } from './about'
@@ -62,6 +63,7 @@ type StoreType = {
     AboutComponent,
     HomeComponent,
     LanguageTabComponent, RepositoryTabComponent, ContributionTabComponent,
+    LangProgressComponent,
     NoContentComponent,
   ],
   imports: [
