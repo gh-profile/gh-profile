@@ -1,0 +1,39 @@
+sudo: required
+dist: trusty
+
+language: go
+
+go:
+  - 1.8
+
+addons:
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
+
+env:
+  global:
+    - NODE_VERSION="v6.10.2"
+  matrix:
+    - SERVER=true TARGET=ghp-server BUILD_CMD="make build"
+    - WEBAPP=true TARGET=ghp-webapp BUILD_CMD="yarn run ci:travis"
+
+install:
+  - cd $TARGET
+  - if [ -n "$SERVER" ]; then mkdir -p $GOPATH/bin ; fi
+  - if [ -n "$SERVER" ]; then make install ; fi
+  - if [ -n "$WEBAPP" ]; then curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash ; fi
+  - if [ -n "$WEBAPP" ]; then nvm install $NODE_VERSION ; fi
+  - if [ -n "$WEBAPP" ]; then nvm use $NODE_VERSION --default ; fi
+  - if [ -n "$WEBAPP" ]; then npm install -g yarn; yarn install ; fi
+
+# https://iamakulov.com/notes/all/install-google-chrome-on-travis/
+before_script:
+  - if [ -n "$WEBAPP" ]; then export DISPLAY=:99.0 ; fi
+  - if [ -n "$WEBAPP" ]; then sh -e /etc/init.d/xvfb start ; fi
+  - if [ -n "$WEBAPP" ]; then sleep 3 ; fi
+
+script:
+  - eval $BUILD_CMD
