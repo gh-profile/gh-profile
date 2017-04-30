@@ -7,6 +7,7 @@ import { FlexLayoutModule } from '@angular/flex-layout'
 
 import { NavbarComponent, } from './navbar/navbar.component'
 import { FooterComponent, } from './footer/footer.component'
+import { NoContentComponent, } from './no-content/no-content.component'
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { FooterComponent, } from './footer/footer.component'
   declarations: [
     NavbarComponent,
     FooterComponent,
+    NoContentComponent,
   ],
   exports: [
     NavbarComponent,

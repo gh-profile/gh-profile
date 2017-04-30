@@ -27,8 +27,6 @@ import { ROUTES } from './app.routes'
 import { AppComponent } from './app.component'
 import { APP_RESOLVER_PROVIDERS } from './app.resolver'
 import { AppState, InternalStateType } from './app.service'
-import { AboutComponent } from './about'
-import { NoContentComponent } from './no-content'
 
 import { CoreModule, } from './core/core.module'
 import { HomeModule, } from './home/home.module'
@@ -54,8 +52,6 @@ type StoreType = {
   bootstrap: [ AppComponent ],
   declarations: [
     AppComponent,
-    AboutComponent,
-    NoContentComponent,
   ],
   imports: [
     BrowserModule,
