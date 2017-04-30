@@ -13,8 +13,8 @@ $dark-theme: map-merge($dark-theme, (backgroundSub: #F5F5F5));
 @include angular-material-theme($dark-theme);
 @include mat-chips-theme($light-theme);
 
-@import '../app/shared/footer/footer.theme';
-@import '../app/shared/navbar/navbar.theme';
+@import '../app/core/footer/footer.theme';
+@import '../app/core/navbar/navbar.theme';
 @import '../app/home/home.theme';
 
 @include navbar-theme($dark-theme);

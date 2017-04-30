@@ -2,8 +2,6 @@ import 'hammerjs' // @angular/material
 
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
-import { FormsModule } from '@angular/forms'
-import { HttpModule } from '@angular/http'
 import {
   NgModule,
   ApplicationRef
@@ -29,15 +27,11 @@ import { ROUTES } from './app.routes'
 import { AppComponent } from './app.component'
 import { APP_RESOLVER_PROVIDERS } from './app.resolver'
 import { AppState, InternalStateType } from './app.service'
-import { HomeComponent } from './home'
-import { LanguageTabComponent } from './home/tabs/language-tab.component'
-import { LangProgressComponent } from './home/lang/lang-progress.component'
-import { RepositoryTabComponent } from './home/tabs/repository-tab.component'
-import { ContributionTabComponent } from './home/tabs/contribution-tab.component'
 import { AboutComponent } from './about'
 import { NoContentComponent } from './no-content'
 
-import { SharedModule, } from './shared/shared.module'
+import { CoreModule, } from './core/core.module'
+import { HomeModule, } from './home/home.module'
 
 import '../styles/styles.scss'
 
@@ -61,20 +55,14 @@ type StoreType = {
   declarations: [
     AppComponent,
     AboutComponent,
-    HomeComponent,
-    LanguageTabComponent, RepositoryTabComponent, ContributionTabComponent,
-    LangProgressComponent,
     NoContentComponent,
   ],
   imports: [
-    SharedModule,
-    MaterialModule.forRoot(),
-    FlexLayoutModule,
     BrowserModule,
     BrowserAnimationsModule,
-    FormsModule,
-    HttpModule,
-    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules })
+    RouterModule.forRoot(ROUTES, { useHash: true, preloadingStrategy: PreloadAllModules }),
+    CoreModule,
+    HomeModule,
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

@@ -1,29 +1,28 @@
 import { NgModule, } from '@angular/core'
 import { CommonModule } from '@angular/common'
-import { FormsModule } from '@angular/forms'
-import { HttpModule } from '@angular/http'
 import { RouterModule, } from '@angular/router'
 
 import { MaterialModule, } from '@angular/material'
 import { FlexLayoutModule } from '@angular/flex-layout'
 
+import { NavbarComponent, } from './navbar/navbar.component'
+import { FooterComponent, } from './footer/footer.component'
+
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
-    HttpModule,
     RouterModule,
     MaterialModule.forRoot(),
     FlexLayoutModule,
   ],
-  declarations: [ ],
+  declarations: [
+    NavbarComponent,
+    FooterComponent,
+  ],
   exports: [
-    CommonModule,
-    FormsModule,
-    HttpModule,
-    MaterialModule,
-    FlexLayoutModule,
+    NavbarComponent,
+    FooterComponent,
   ],
   entryComponents: [ ],
 })
-export class SharedModule {}
+export class CoreModule {}

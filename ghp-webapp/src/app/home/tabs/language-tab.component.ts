@@ -23,17 +23,19 @@ export class LanguageTabComponent implements OnInit {
     ]
 
     this.skillInfos = [
-      new SkillInfo("react"),
-      new SkillInfo("redux-saga"),
-      new SkillInfo("angular2"),
-      new SkillInfo("angular1"),
-      new SkillInfo("akka"),
-      new SkillInfo("scalaz"),
-      new SkillInfo("Finch"),
-      new SkillInfo("gokit"),
-      new SkillInfo("docker"),
-      new SkillInfo("jenkins"),
-      new SkillInfo("travis"),
+      new SkillInfo('kafka'),
+      new SkillInfo('spark'),
+      new SkillInfo('akka'),
+      new SkillInfo('scalaz'),
+      new SkillInfo('Finch'),
+      new SkillInfo('react'),
+      new SkillInfo('redux-saga'),
+      new SkillInfo('angular2'),
+      new SkillInfo('angular1'),
+      new SkillInfo('gokit'),
+      new SkillInfo('docker'),
+      new SkillInfo('jenkins'),
+      new SkillInfo('travis'),
     ]
   }
 }
