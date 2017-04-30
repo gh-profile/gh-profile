@@ -1,33 +1,27 @@
 import { browser, by, element } from 'protractor'
 
-describe('App', () => {
-
+describe('AppComponent e2e', () => {
   beforeEach(() => {
     browser.get('/')
   })
 
   it('should have a title', () => {
     let subject = browser.getTitle()
-    let result  = 'gh-profile'
-    expect<any>(subject).toEqual(result)
+    expect(subject).toEqual('gh-profile')
   })
 
-  it('should have header', () => {
-    let subject = element(by.css('h1')).isPresent()
-    let result  = true
-    expect<any>(subject).toEqual(result)
+  it('should have main', () => {
+    let subject = element(by.css('main')).isPresent()
+    expect(subject).toEqual(true)
   })
 
-  it('should have <home>', () => {
-    let subject = element(by.css('app home')).isPresent()
-    let result  = true
-    expect<any>(subject).toEqual(result)
+  it('should have navbar', () => {
+    let subject = element(by.css('app-navbar')).isPresent()
+    expect(subject).toEqual(true)
   })
 
-  it('should have buttons', () => {
-    let subject = element(by.css('button')).getText()
-    let result  = 'Submit Value'
-    expect<any>(subject).toEqual(result)
+  it('should have footer', () => {
+    let subject = element(by.css('app-footer')).isPresent()
+    expect(subject).toEqual(true)
   })
-
 })

@@ -6,6 +6,5 @@ import { Component, OnInit } from '@angular/core'
   styleUrls: [ './tab.component.css' ],
   templateUrl: './contribution-tab.component.html'
 })
-export class ContributionTabComponent implements OnInit {
-  public ngOnInit() { }
+export class ContributionTabComponent {
 }

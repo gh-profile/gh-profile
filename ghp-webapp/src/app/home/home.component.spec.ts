@@ -13,15 +13,12 @@ import {
 } from '@angular/http'
 import { MockBackend } from '@angular/http/testing'
 
-// Load the implementations that should be tested
-import { AppState } from '../app.service'
 import { HomeComponent } from './home.component'
 
-describe(`Home`, () => {
+describe(`HomeComponent`, () => {
   let comp: HomeComponent
   let fixture: ComponentFixture<HomeComponent>
 
-  // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [HomeComponent],
@@ -41,7 +38,6 @@ describe(`Home`, () => {
     .compileComponents() // compile template and css
   }))
 
-  // synchronous beforeEach
   beforeEach(() => {
     fixture = TestBed.createComponent(HomeComponent)
     comp = fixture.componentInstance
@@ -50,5 +46,6 @@ describe(`Home`, () => {
   })
 
   it('home spec', () => {
+    console.log(2)
   })
 })

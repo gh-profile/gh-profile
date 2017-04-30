@@ -6,30 +6,26 @@ import {
   ComponentFixture
 } from '@angular/core/testing'
 
-// Load the implementations that should be tested
 import { AppComponent } from './app.component'
 import { AppState } from './app.service'
 
-describe(`App`, () => {
+describe(`AppComponent`, () => {
   let comp: AppComponent
   let fixture: ComponentFixture<AppComponent>
 
-  // async beforeEach
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ AppComponent ],
       schemas: [NO_ERRORS_SCHEMA],
       providers: [AppState]
-    })
-    .compileComponents() // compile template and css
+    }).compileComponents()
   }))
 
-  // synchronous beforeEach
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent)
-    comp    = fixture.componentInstance
+    comp = fixture.componentInstance
 
-    fixture.detectChanges() // trigger initial data binding
+    fixture.detectChanges()
   })
 
   it(`should be readly initialized`, () => {
@@ -38,7 +34,7 @@ describe(`App`, () => {
   })
 
   it(`should have name`, () => {
-    expect(comp.name).toEqual('gh-profile:viewer')
+    expect(comp.name).toEqual('gh-profile:webapp')
   })
 
   it('should log ngOnInit', () => {
@@ -48,5 +44,4 @@ describe(`App`, () => {
     comp.ngOnInit()
     expect(console.log).toHaveBeenCalled()
   })
-
 })

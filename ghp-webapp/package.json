@@ -51,6 +51,7 @@
     "start:hmr": "npm run server:dev:hmr",
     "start": "npm run server:dev",
     "test": "npm run lint && karma start",
+    "test-cont": "npm run lint && karma --no-single-run start",
     "tslint": "tslint",
     "typedoc": "typedoc",
     "version": "npm run build",
@@ -93,7 +94,7 @@
   "devDependencies": {
     "@angular/compiler-cli": "^4.0.3",
     "@types/hammerjs": "^2.0.34",
-    "@types/jasmine": "^2.5.47",
+    "@types/jasmine": "2.5.41",
     "@types/node": "^7.0.13",
     "@types/source-map": "^0.5.0",
     "@types/uglify-js": "^2.6.28",

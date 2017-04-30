@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gh-profile/gh-profile.svg?branch=master)](https://travis-ci.org/gh-profile/gh-profile)
+
 # gh-profile
 
 ## Development
