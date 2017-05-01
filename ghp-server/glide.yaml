@@ -1,6 +1,6 @@
-package: github.com/1ambda/gh-profile/ghp-server
+package: github.com/gh-profile/gh-profile/ghp-server
 ignore:
-- github.com/1ambda/gh-profile
+- github.com/gh-profile/gh-profile
 import:
 - package: github.com/google/go-github
   subpackages:
@@ -22,6 +22,12 @@ import:
   subpackages:
   - gracehttp
 - package: github.com/facebookgo/httpdown
+- package: github.com/google/go-querystring
+  subpackages:
+  - query
+- package: github.com/mitchellh/go-homedir
+- package: github.com/BurntSushi/toml
+  version: ^0.3.0
 testImport:
 - package: github.com/onsi/ginkgo
   version: ~1.2.0
