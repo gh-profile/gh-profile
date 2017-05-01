@@ -1,29 +1,62 @@
 package main
 
 import (
-    "fmt"
+    "os"
+    "net/http"
     "github.com/gh-profile/gh-profile/ghp-server/config"
-    "gopkg.in/kataras/iris.v6"
-    "gopkg.in/kataras/iris.v6/adaptors/httprouter"
+    "github.com/labstack/echo"
+    log "github.com/Sirupsen/logrus"
+    "github.com/labstack/echo/middleware"
 )
 
 func main() {
+    // get env, flags
     flag := config.GetFlag()
     env := config.GetEnvironment()
 
-    fmt.Println("Starting gh-profile")
-    fmt.Println(flag)
-    fmt.Println(env)
 
-    app := iris.New()
-    // Adapt the "httprouter", faster,
-    // but it has limits on named path parameters' validation,
-    // you can adapt "gorillamux" if you need regexp path validation!
-    app.Adapt(httprouter.New())
+    // set logger
+    logOut := os.Stdout
+    logLevel := log.DebugLevel
 
-    app.HandleFunc("GET", "/", func(ctx *iris.Context) {
-        ctx.Writef("hello world\n")
+    if env.Mode == "PROD" {
+        logFile := "gh-profile.log"
+        f, err := os.OpenFile(logFile, os.O_WRONLY | os.O_CREATE, 0755)
+        if err != nil {
+            panic(err)
+        }
+        logOut = f
+        logLevel = log.InfoLevel
+        log.SetFormatter(&log.JSONFormatter{})
+    }
+
+    log.SetOutput(logOut)
+    log.SetLevel(logLevel)
+
+    log.WithFields(log.Fields{ "tag": "flag", }).Info(flag)
+    log.WithFields(log.Fields{ "tag": "env", }).Info(env)
+
+    // setup server
+    e := echo.New()
+    middleware.DefaultLoggerConfig.Output = logOut
+    middlewareLogFormat := `time="${time_rfc3339}" tag="api" id="${id}" remote_ip="${remote_ip}" host="${host}" ` +
+        `method="${method}" uri="${uri}" status=${status} latency=${latency} ` +
+        `latency_human="${latency_human}" bytes_in=${bytes_in}` +
+        `bytes_out=${bytes_out}` + "\n"
+
+    if env.Mode == "PROD" {
+        middlewareLogFormat = `{"time":"${time_rfc3339}", "tag": "api", "id":"${id}","remote_ip":"${remote_ip}","host":"${host}", ` +
+            `"method":"${method}", "uri":"${uri}", "status":${status}, "latency":${latency}, ` +
+            `"latency_human":"${latency_human}", "bytes_in":${bytes_in}, ` +
+            `"bytes_out":${bytes_out}}` + "\n"
+    }
+
+    middleware.DefaultLoggerConfig.Format = middlewareLogFormat
+    e.Use(middleware.Logger())
+    e.Use(middleware.Recover())
+
+    e.GET("/", func(c echo.Context) error {
+        return c.String(http.StatusOK, "Hello, World!")
     })
-
-    app.Listen(env.Port)
+    log.Fatal(e.Start(env.Port))
 }

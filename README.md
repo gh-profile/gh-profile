@@ -12,7 +12,7 @@ Install the following dependencies.
 | glide | 0.13.0+ | [glide](https://github.com/Masterminds/glide#install) |
 | node | 6.10.2+ | [nvm](https://github.com/creationix/nvm) |
 | yarn | 0.23.0+ | [yarn](https://yarnpkg.com/lang/en/) |
-| typescript | 2.2+ | [typescript](https://www.typescriptlang.org) |
+| typescript | 2.3+ | [typescript](https://www.typescriptlang.org) |
 
 Then, clone the repository.
 
