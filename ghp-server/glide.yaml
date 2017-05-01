@@ -18,6 +18,10 @@ import:
   - color
 - package: github.com/dgrijalva/jwt-go
   version: ^3.0.0
+- package: github.com/facebookgo/grace
+  subpackages:
+  - gracehttp
+- package: github.com/facebookgo/httpdown
 testImport:
 - package: github.com/onsi/ginkgo
   version: ~1.2.0

@@ -1,5 +1,5 @@
-hash: 7241f42b3655ca1d26e266735d02b074968f98a142142745dc3f8c8cd2bd8718
-updated: 2017-05-01T17:10:18.567111327+09:00
+hash: e2af1cf37c786e72fc408f88473b0fbbdf522f75e08ce13818eb3007557595dd
+updated: 2017-05-01T17:43:10.402928702+09:00
 imports:
 - name: github.com/alexflint/go-arg
   version: cef6506c97e5731da728c374ff3523e481026423
@@ -7,6 +7,17 @@ imports:
   version: 45e5d6cd8605faef82fda2bacc59e734a0b6f1f0
 - name: github.com/dgrijalva/jwt-go
   version: d2709f9f1f31ebcda9651b03077758c1f3a0018c
+- name: github.com/facebookgo/clock
+  version: 600d898af40aa09a7a93ecb9265d87b0504b6f03
+- name: github.com/facebookgo/grace
+  version: 4afe952a37a495ae4ac0c1d4ce5f66e91058d149
+  subpackages:
+  - gracehttp
+  - gracenet
+- name: github.com/facebookgo/httpdown
+  version: a3b1354551a26449fbe05f5d855937f6e7acbd71
+- name: github.com/facebookgo/stats
+  version: 1b76add642e42c6ffba7211ad7b3939ce654526e
 - name: github.com/google/go-github
   version: e8d46665e050742f457a58088b1e6b794b2ae966
   subpackages:

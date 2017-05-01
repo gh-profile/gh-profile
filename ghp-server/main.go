@@ -5,8 +5,9 @@ import (
     "net/http"
     "github.com/gh-profile/gh-profile/ghp-server/config"
     "github.com/labstack/echo"
-    log "github.com/Sirupsen/logrus"
+    "github.com/Sirupsen/logrus"
     "github.com/labstack/echo/middleware"
+    "github.com/facebookgo/grace/gracehttp"
 )
 
 func main() {
@@ -14,10 +15,11 @@ func main() {
     flag := config.GetFlag()
     env := config.GetEnvironment()
 
-
     // set logger
+    logger := logrus.New()
+    logger.Formatter = &logrus.JSONFormatter{}
     logOut := os.Stdout
-    logLevel := log.DebugLevel
+    logLevel := logrus.DebugLevel
 
     if env.Mode == "PROD" {
         logFile := "gh-profile.log"
@@ -26,15 +28,14 @@ func main() {
             panic(err)
         }
         logOut = f
-        logLevel = log.InfoLevel
-        log.SetFormatter(&log.JSONFormatter{})
+        logLevel = logrus.InfoLevel
     }
 
-    log.SetOutput(logOut)
-    log.SetLevel(logLevel)
+    logger.Out = logOut
+    logger.Level = logLevel
 
-    log.WithFields(log.Fields{ "tag": "flag", }).Info(flag)
-    log.WithFields(log.Fields{ "tag": "env", }).Info(env)
+    logger.WithFields(logrus.Fields{ "tag": "flag", }).Info(flag)
+    logger.WithFields(logrus.Fields{ "tag": "env", }).Info(env)
 
     // setup server
     e := echo.New()
@@ -55,8 +56,15 @@ func main() {
     e.Use(middleware.Logger())
     e.Use(middleware.Recover())
 
+    // configure handlers
     e.GET("/", func(c echo.Context) error {
         return c.String(http.StatusOK, "Hello, World!")
     })
-    log.Fatal(e.Start(env.Port))
+
+    // start server
+    e.Server.Addr = env.Port
+    logger.WithFields(logrus.Fields{ "tag": "app", }).Info("start server")
+    gracehttp.Serve(e.Server)
+    logger.WithFields(logrus.Fields{ "tag": "app", }).Info("shutdown the server")
+    
 }
